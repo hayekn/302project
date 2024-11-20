@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.13)  16 NOV 2024 23:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.13)  20 NOV 2024 18:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2178,19 +2178,29 @@ File: T1SourceCodePro-TLF.fd 2018/02/18 (autoinst) Font definitions for T1/Sour
 ceCodePro-TLF.
 )
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 53.
+(Font)              scaled to size 10.0pt on input line 53.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `SourceCodePro-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 53.
+
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
+(Font)              using `U/stmry/m/n' instead on input line 71.
+
+
+Overfull \hbox (6.68678pt too wide) in paragraph at lines 71--72
+[]\T1/jkp/b/n/10 (-20) Determine if two boolean ex-pres-sions have an im-pli-ca
+-tion re-la-tion, i.e. $[]$, $[]$,
+ []
+
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 9.0pt on input line 76.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/jkp/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2202,6 +2212,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
+Overfull \hbox (24.75462pt too wide) in paragraph at lines 85--96
+ [] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2211,15 +2225,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [2] (./Description.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `Description.out' has not changed.
 (rerunfilecheck)             Checksum: A703AFB34E28B26E62D972A8AEAD0531;163.
  ) 
 Here is how much of TeX's memory you used:
- 45195 strings out of 478268
- 997437 string characters out of 5846347
- 1655353 words of memory out of 5000000
- 62366 multiletter control sequences out of 15000+600000
- 611815 words of font info for 205 fonts, out of 8000000 for 9000
+ 45356 strings out of 478268
+ 999836 string characters out of 5846347
+ 1658388 words of memory out of 5000000
+ 62468 multiletter control sequences out of 15000+600000
+ 638598 words of font info for 280 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  115i,13n,120p,1008b,1154s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.en
@@ -2227,18 +2244,20 @@ c}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
 exlive/2022/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{/usr/local/t
 exlive/2022/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-large-sc.enc}</usr/local
 /texlive/2022/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpkmsc.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/loca
-l/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/local/texli
-ve/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/local/texlive/20
-22/texmf-dist/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
-Output written on Description.pdf (2 pages, 121028 bytes).
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpbmi.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpbsy.pfb></usr/loca
+l/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpkmsc.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/local/texlive/
+2022/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/local/texlive/202
+2/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/local/texlive/2022/te
+xmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/local/texlive/2022/texmf-d
+ist/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/local/texlive/2022/texmf-dist
+/fonts/type1/public/kpfonts/jkpsy.pfb>
+Output written on Description.pdf (2 pages, 135459 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  25 named destinations out of 1000 (max. 500000)
- 54813 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 71197 words of extra memory for PDF output out of 74296 (max. 10000000)
 

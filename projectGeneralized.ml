@@ -90,32 +90,6 @@ let trInputList (e: expression): int list = (* with continuations *)
 
 
 (* EVALUATION FUNCTIONS *)
-(** EVALUATING WITH MEMOIZATION 
-  Evaluates a boolean expression with memoization to optimize repeated evaluations
-    @param e The expression to evaluate.
-    @param values A list of (variable, value) pairs.
-    @return The result of evaluating the expression.
-*)
-let memoEvaluateExpression =
-  let store : (expression * (int * bool) list, bool) Hashtbl.t = Hashtbl.create 1000 in
-
-  let rec eval (e: expression) (values: (int * bool) list) =
-    (* Check memoization store *)
-    match Hashtbl.find_opt store (e, values) with
-    | Some result -> result
-    | None ->
-        (* Evaluate based on expression type *)
-        let result = match e with
-          | Var u -> matchValue u values
-          | Not u -> not (eval u values)
-          | And(u, v) -> (eval u values) && (eval v values)
-          | Or(u, v) -> (eval u values) || (eval v values)
-        in
-        (* Memoize and return result *)
-        (Hashtbl.add store (e, values) result;
-        result)
-      in eval
-
 (** EVALUATING REGULARLY 
 Evaluates a boolean expression using a standard recursive approach.
     @param e The boolean expression to evaluate.
@@ -144,6 +118,31 @@ let evaluateExpression' =
       |Or(u, v) -> trEval (fun r1 -> trEval (fun r2 -> acc (r1 || r2)) v values) u values in
     trEval (fun r -> r)
 
+(** EVALUATING WITH MEMOIZATION 
+  Evaluates a boolean expression with memoization to optimize repeated evaluations
+    @param e The expression to evaluate.
+    @param values A list of (variable, value) pairs.
+    @return The result of evaluating the expression.
+*)
+let memoEvaluateExpression =
+  let store : (expression * (int * bool) list, bool) Hashtbl.t = Hashtbl.create 1000 in
+
+  let rec eval (e: expression) (values: (int * bool) list) =
+    (* Check memoization store *)
+    match Hashtbl.find_opt store (e, values) with
+    | Some result -> result
+    | None ->
+        (* Evaluate based on expression type *)
+        let result = match e with
+          | Var u -> matchValue u values
+          | Not u -> not (eval u values)
+          | And(u, v) -> (eval u values) && (eval v values)
+          | Or(u, v) -> (eval u values) || (eval v values)
+        in
+        (* Memoize and return result *)
+        (Hashtbl.add store (e, values) result;
+        result)
+      in eval
 
 (* TRUTH TABLES *)
 
