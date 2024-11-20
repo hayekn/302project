@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.13)  20 NOV 2024 18:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.13)  20 NOV 2024 18:28
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2212,10 +2212,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Overfull \hbox (24.75462pt too wide) in paragraph at lines 85--96
+Overfull \hbox (24.75462pt too wide) in paragraph at lines 84--95
  [] 
  []
 
+LaTeX Font Info:    Trying to load font information for U+fontawesomethree on i
+nput line 96.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2232,32 +2237,34 @@ Package rerunfilecheck Info: File `Description.out' has not changed.
 (rerunfilecheck)             Checksum: A703AFB34E28B26E62D972A8AEAD0531;163.
  ) 
 Here is how much of TeX's memory you used:
- 45356 strings out of 478268
- 999836 string characters out of 5846347
+ 45371 strings out of 478268
+ 1000316 string characters out of 5846347
  1658388 words of memory out of 5000000
- 62468 multiletter control sequences out of 15000+600000
- 638598 words of font info for 280 fonts, out of 8000000 for 9000
+ 62478 multiletter control sequences out of 15000+600000
+ 638900 words of font info for 281 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  115i,13n,120p,1008b,1154s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.en
-c}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2022/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{/usr/local/t
-exlive/2022/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-large-sc.enc}</usr/local
-/texlive/2022/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpbmi.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpbsy.pfb></usr/loca
-l/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpkmsc.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/local/texlive/
-2022/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/local/texlive/2022/te
-xmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/local/texlive/2022/texmf-d
-ist/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/local/texlive/2022/texmf-dist
-/fonts/type1/public/kpfonts/jkpsy.pfb>
-Output written on Description.pdf (2 pages, 135459 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometh
+ree.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-exp
+ert.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/l
+ocal/texlive/2022/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{/usr/l
+ocal/texlive/2022/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-large-sc.enc}</usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePr
+o-Regular.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jk
+pbmi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a
+.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpbsy.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpkmsc.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/loca
+l/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/local/texlive/20
+22/texmf-dist/fonts/type1/public/kpfonts/jkpmsc8a.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
+Output written on Description.pdf (2 pages, 151888 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  25 named destinations out of 1000 (max. 500000)
  71197 words of extra memory for PDF output out of 74296 (max. 10000000)
 

@@ -307,19 +307,10 @@ let run_test evaluator (e : expression) expected =
     Printf.printf "Fail: %s\nExpected: %s\nReceived: %s\n\n"
       (printExpression e)
       (String.concat "; " (List.map string_of_bool expected))
-      (String.concat "; " (List.map string_of_bool result))    
+      (String.concat "; " (List.map string_of_bool result))    ;;
 
-let () =
-  printExpression test1 |> Printf.printf "Expression 1: %s\n";
-  printExpression test2 |> Printf.printf "Expression 2: %s\n";
-  printTruthTable evaluateExpression test1;
-  printTruthTable evaluateExpression test2;;
-
-findSolutions evaluateExpression test1;;
-printTruthTable evaluateExpression' test2;;
-printTruthTable evaluateExpression test2;;
-
-(* Exexutes tests for a specific evaluator function *)
+      
+(* Executes tests for a specific evaluator function *)
 let run_tests eval () =
   run_test eval test_and [true; false; false; false];
   run_test eval test_or [true; true; true; false];
