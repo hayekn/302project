@@ -159,6 +159,16 @@ let truthTable evaluator (e : expression) : (bool list * bool) list =
     ) combinations
 
 
+let formated_int n =
+  let s = string_of_int n in
+  let space = String.make (6 - String.length s) ' ' in
+  s ^ space
+
+
+let formated_bool b =
+  if b then "true " else "false"
+
+    
 (**
   Prints the truth table for a given expression.
     @param evaluator The evaluation function to use.
@@ -168,10 +178,11 @@ let printTruthTable evaluator (e : expression) =
   let vars = inputList e in
   let table = truthTable evaluator e in
   Printf.printf "Truth table for %s:\n" (printExpression e);
-  Printf.printf "%12s | Result\n" (String.concat "    " (List.map string_of_int vars));
+  Printf.printf "%12s| Result\n" (String.concat "" (List.map formated_int vars));
   List.iter (fun (comb, result) ->
-      Printf.printf "%12s | %B\n" (String.concat " " (List.map string_of_bool comb)) result
+      Printf.printf "%11s | %B\n" (String.concat " " (List.map formated_bool comb)) result
     ) table
+    
 
 
 
