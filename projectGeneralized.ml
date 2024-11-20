@@ -11,7 +11,7 @@ This program includes capabilities such as
 (** Exception raised for invalid input such as non-integers *)
 exception Msg of string
 let invalidInput = Msg("invalidInput (use variable indices as integers)")
-
+let testFailed = Msg("Test has Failed!")
 (** Represents elements of a boolean expression *)
 type expression =
   | Var of int
@@ -159,13 +159,23 @@ let truthTable evaluator (e : expression) : (bool list * bool) list =
     ) combinations
 
 
-let formated_int n =
+(**
+  Converts an integer to a string and adds whitespace to make it 6 characters wide.
+    @param n Integer to format.
+    @return The resulting string.
+*) 
+let formatted_int n =
   let s = string_of_int n in
   let space = String.make (6 - String.length s) ' ' in
   s ^ space
 
 
-let formated_bool b =
+(**
+  Converts an boolean to a string and adds whitespace to make it 6 characters wide.
+    @param n A boolean value.
+    @return The resulting string.
+*) 
+let formatted_bool b =
   if b then "true " else "false"
 
     
@@ -178,14 +188,10 @@ let printTruthTable evaluator (e : expression) =
   let vars = inputList e in
   let table = truthTable evaluator e in
   Printf.printf "Truth table for %s:\n" (printExpression e);
-  Printf.printf "%12s| Result\n" (String.concat "" (List.map formated_int vars));
+  Printf.printf "%12s| Result\n" (String.concat "" (List.map formatted_int vars));
   List.iter (fun (comb, result) ->
-      Printf.printf "%11s | %B\n" (String.concat " " (List.map formated_bool comb)) result
+      Printf.printf "%11s | %B\n" (String.concat " " (List.map formatted_bool comb)) result
     ) table
-    
-
-
-
 
 (*SOLUTION SET FUNCTIONS*)
 (**
@@ -275,11 +281,37 @@ let satSolverIff (e1 : expression) (e2: expression) evaluator : bool =
 
 
 
-(* TESTING *)
+(* TESTING *) 
+let test_and = And((Var(1)), Var(2))
+let test_or = Or((Var(1)), Var(2))
+let test_not = Not(Var(1))
 let test1 = And(Not(Or(Var(1), And(Var(1), Var(2)))), Or(And(Var(3), Var(2)), And(Not(Var(1)), Var(3))))
 let test2 = And(Not(Var(3)), Var(2))
 let test3 = And(And(Or(Or(Not(Var(3)), Var(10)), Or(Not(Var(3)), And(Var(2), Var(9)))), 
-Or(Var(1), Or(Or(Var(6), Var(5)), Var(2)))), Or(Or(Var(5), Or(Or(Var(8), Var(3)), Not(Var(5)))), Not(Var(10))))
+                    Or(Var(1), Or(Or(Var(6), Var(5)), Var(2)))), Or(Or(Var(5), Or(Or(Var(8), Var(3)), Not(Var(5)))), Not(Var(10))))
+let test4 = Or(And((Var(1)),Not(Var(2))), And(Not(Var(1)),(Var(2)))) 
+let test5 = Not(Or(And(Var(1),Var(2)),Not(Var(3))))
+let test6 = Or(Not(And(Var(1),Var(2))),And(Var(3),Var(4)))
+let test7 = And(Not(Or(Var(1),And(Var(2),Var(3)))),Or(And(Not(Var(4)),Var(3)),And(Var(1),Or(Var(2),Var(4)))))
+
+(** 
+    Checks to see if the output of running the evaluation function matches 
+what is expected.
+    
+    @param evaluator The evaluation function to use.
+    @param e The boolean expression.
+    @param e A boolean list that contains the correct evaluation.
+*)    
+let run_test evaluator (e : expression) expected =
+  let table = truthTable evaluator e in
+  let result = List.map snd table in
+  if result = expected then
+    Printf.printf "Pass: %s\n" (printExpression e)
+  else
+    Printf.printf "Fail: %s\nExpected: %s\nReceived: %s\n\n"
+      (printExpression e)
+      (String.concat "; " (List.map string_of_bool expected))
+      (String.concat "; " (List.map string_of_bool result))    
 
 let () =
   printExpression test1 |> Printf.printf "Expression 1: %s\n";
@@ -290,3 +322,26 @@ let () =
 findSolutions evaluateExpression test1;;
 printTruthTable evaluateExpression' test2;;
 printTruthTable evaluateExpression test2;;
+
+(* Exexutes tests for a specific evaluator function *)
+let run_tests eval () =
+  run_test eval test_and [true; false; false; false];
+  run_test eval test_or [true; true; true; false];
+  run_test eval test_not [false; true;];
+  run_test eval test1 [false; false; false; false; true; false; true; false];
+  run_test eval test2 [false; true; false; false];
+  run_test eval test4 [false; true; true; false];
+  run_test eval test5 [false; false; true; false; true; false; true; false];
+  
+  run_test eval test6 [true; false; false; false; true; true; true; 
+                       true; true; true; true; true; true; true; true; true];
+  
+  run_test eval test7 [false; false; false; false; false; false; false;
+                       false; false; false; false; false; false; true; false; false];;
+
+(* This function executes all tests for each evaluator function. *)
+let run_all_tests () = 
+  run_tests evaluateExpression();
+  run_tests evaluateExpression'();
+  run_tests memoEvaluateExpression();;
+run_all_tests();;
