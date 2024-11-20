@@ -19,7 +19,7 @@ type expression =
   | And of expression * expression
   | Or of expression * expression
 
-(* HELPER FUNCTION *)
+(* HELPER FUNCTIONS *)
 (** Matches a variable's value in the provided list of (int*bool) pairs
   @param u The variable to look up
   @param values A list of (variable, value) pairs
@@ -28,6 +28,23 @@ type expression =
 *)
 let matchValue u values = 
   try List.assoc u values with Not_found -> raise invalidInput
+(**
+  Converts an integer to a string and adds whitespace to make it 6 characters wide.
+    @param n Integer to format.
+    @return The resulting string.
+*) 
+let formatted_int n =
+  let s = string_of_int n in
+  let space = String.make (6 - String.length s) ' ' in
+  s ^ space
+(**
+  Converts an boolean to a string and adds whitespace to make it 6 characters wide.
+    @param n A boolean value.
+    @return The resulting string.
+*) 
+let formatted_bool b =
+  if b then "true " else "false"
+
 
 (* PRINTING *)
 (**
@@ -157,26 +174,6 @@ let truthTable evaluator (e : expression) : (bool list * bool) list =
       let values = List.combine vars comb in
       (comb, evaluator e values)
     ) combinations
-
-
-(**
-  Converts an integer to a string and adds whitespace to make it 6 characters wide.
-    @param n Integer to format.
-    @return The resulting string.
-*) 
-let formatted_int n =
-  let s = string_of_int n in
-  let space = String.make (6 - String.length s) ' ' in
-  s ^ space
-
-
-(**
-  Converts an boolean to a string and adds whitespace to make it 6 characters wide.
-    @param n A boolean value.
-    @return The resulting string.
-*) 
-let formatted_bool b =
-  if b then "true " else "false"
 
     
 (**
