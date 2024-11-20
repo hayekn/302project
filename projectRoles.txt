@@ -1,0 +1,19 @@
+Name		ID		Contributions		
+-----------------------------------------------------------
+Alex Beloiu	261244745	Functions & solution code
+
+Nicholas Hayek	261101723	Writing & recording video
+				Functions & solution code
+				Writing project description
+
+Shannon Huo	260948579	Functions & solution code
+				Template code
+
+
+We permit this project to be shared.
+
+
+Signatures:
+	Nicholas Hayek
+	Shannon Huo
+	Alexander Beloiu
