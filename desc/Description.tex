@@ -78,7 +78,8 @@ The third and fourth questions have been solved on OCaml (\textit{ocaml.org $\to
 	\item Implement \code{evaluateExpression} in 3 ways: recursively, tail-recursively, and with memoization. Pattern match on the expression: if a variable, return the variable's assignment. Otherwise, perform the appropriate logical operation (i.e. \code{not}, \code{||}, \code{\&\&}) on the recursive call of its sub-expressions. Use a hash-table to accomplish memoization.
 	\item Implement \code{generateCombinations}, which generates a 2D list of $2^n$ rows consisting of all length-$n$ true-false combinations. Then implement \code{truthTable}, which returns a list of input-output combinations. Use higher order functions to allow the user to choose which evaluator to use. \code{Printf.printf} provides the functionality to display the results from (1), (2), and (4).
 	\item Implement \code{alwaysTrue, existsSolution}, and \code{findSolutions}. After generating the truth table in (3), we analyze the solutions (are they all true/false?; if a combination evaluates to true, what was it)? 
-	\item Implement \code{satSolverImplies, satSolverImpliedBy, satSolverIff}. For $e_1 \implies e_2$ to hold, we require exactly that $e_2$ be true when $e_1$ is true. This is encoded in the verification of $e := (\lnot e_1) \lor e_2$. Generate the truth table for $e$, and use \code{alwaysTrue} to see if it always holds. $e_1 \impliedby e_2$ and $e_1 \iff e_2$ follow similarly. 
+	\item Implement \code{satSolverImplies, satSolverImpliedBy, satSolverIff}. For $e_1 \implies e_2$ to hold, we require exactly that $e_2$ be true when $e_1$ is true. This is encoded in the verification of $e := (\lnot e_1) \lor e_2$. Hence, use \code{alwaysTrue} to see if $e$ is identically true. $e_1 \impliedby e_2$ and $e_1 \iff e_2$ follow similarly. 
+\end{enumerate}
 	\\We look for the following types, where \code{<evaluator> = exp -> (int*bool) list -> bool}.
 	\begin{center}
 		\begin{tabular}{l||l}
@@ -99,7 +100,6 @@ The third and fourth questions have been solved on OCaml (\textit{ocaml.org $\to
 %let e = Or(And(Not(Var(3)), Var(1)), Var(2))
 %\end{lstlisting}
 %	then we need to extract these inputs recursively into a sorted list (i.e. \code{[1;2;3]}) and create pairings between a row of bools (recall: there are $2^n$ of these) and this list of variables. Finally, evaluate. Memoization may be accomplished by checking and storing sub-expressions in a hash table.
-\end{enumerate}
 
 
 \end{document}
